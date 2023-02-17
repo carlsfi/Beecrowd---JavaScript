@@ -1,0 +1,19 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt= function(frase) { return lines.shift ();};
+
+var [A, B]=prompt("Hora Inicial e Hora Final").split(" ").map(Number);
+
+var dia1= 24 - A;
+var duracao= dia1 + B;
+
+if(A<13 && B>12){
+    var duracao= B - A;
+    console.log("O JOGO DUROU " + duracao + " HORA(S)");
+}
+else if(duracao>24 || duracao<1){
+    console.log("Valor invalido!");
+}
+else{
+    console.log("O JOGO DUROU " + duracao + " HORA(S)");
+}
