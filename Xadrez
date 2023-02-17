@@ -1,0 +1,22 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto){return lines.shift();};
+
+var L = prompt("Valor de Linhas");
+var C = prompt("Valor de Colunas");
+
+L = parseInt(L);
+C = parseInt(C);
+
+if((L % 2) === 0 && (C % 2) === 0){
+    console.log("1");
+}
+if((L % 2) == 1 && (C % 2) == 1){
+    console.log("1");
+}
+if((L%2) == 1 && (C%2) === 0){
+    console.log("0");
+}
+if((L%2) === 0 && (C%2) == 1){
+    console.log("0");
+}
