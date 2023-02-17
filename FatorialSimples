@@ -1,0 +1,11 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto){ return lines.shift();};
+
+let N = parseInt(prompt("Insira o Valor"));
+let fatorial = 1;
+
+for(i = 1; i <= N; i++){
+    fatorial = i * fatorial;
+}
+console.log(fatorial);
