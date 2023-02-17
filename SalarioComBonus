@@ -1,0 +1,13 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+
+var prompt=function(texto) { return lines.shift ();};
+
+
+var nome = parseInt(prompt("Nome do vendedor"));
+var salario = parseFloat(prompt("Salário Fixo"));
+var vendas = parseFloat(prompt("Total de vendas efetuadas no mês (em dinheiro)"));
+
+var total = salario + (vendas * 0.15);
+
+console.log("TOTAL = R$ " + total.toFixed(2));
