@@ -1,0 +1,44 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt= function(frase) { return lines.shift ();};
+
+var [hInicial, mInicial, hFinal, mFinal]= prompt("hora inicial, minuto inicial, hora final e minuto final").split(" ").map(Number);
+
+var duracaoH = hFinal - hInicial;
+var duracaoM = mFinal - mInicial;
+var saida;
+
+
+if(duracaoH===0 && duracaoM===0){
+    saida = ("O JOGO DUROU 24 HORA(S) E 0 MINUTO(S)");
+}
+
+else if(hFinal>hInicial && mFinal<mInicial){
+    duracaoH --;
+    duracaoM = (60 - mInicial) + mFinal;
+    saida = ("O JOGO DUROU " + duracaoH + " HORA(S) E " + duracaoM + " MINUTO(S)");
+}
+else if(duracaoH<0 && duracaoM>0){
+    duracaoH = (24 - hInicial) + hFinal;
+    saida = ("O JOGO DUROU " + duracaoH + " HORA(S) E " + duracaoM + " MINUTO(S)");
+}
+else if(duracaoH>0 && duracaoM<0){
+    duracaoH --;
+    duracaoM = (60 - mInicial) + mFinal;
+    saida = ("O JOGO DUROU " + duracaoH + " HORA(S) E " + duracaoM + " MINUTO(S)");
+}
+else if(duracaoH<0 && duracaoM<0){
+    duracaoH = (24 - hInicial) + hFinal;
+    duracaoH --;
+    duracaoM = (60 - mInicial) + mFinal;
+    saida = ("O JOGO DUROU " + duracaoH + " HORA(S) E " + duracaoM + " MINUTO(S)");
+}
+else if(hInicial==hFinal && mInicial!=mFinal && duracaoM<0){
+    duracaoM = 60 + duracaoM;
+    saida = ("O JOGO DUROU 23 HORA(S) E " + duracaoM + " MINUTO(S)");
+}
+
+else{
+    saida = ("O JOGO DUROU " + duracaoH + " HORA(S) E " + duracaoM + " MINUTO(S)");
+}
+console.log(saida);
