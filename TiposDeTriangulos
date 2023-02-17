@@ -1,0 +1,138 @@
+//Variáveis Importantes//
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt= function(frase) { return lines.shift ();};
+
+//Variáveis Importantes//
+var maior;
+var meio;
+var menor;
+var n1;
+var n2;
+
+//Variáveis//
+var [A, B, C]=prompt("Valores de A, B e C").split(" ").map(parseFloat);
+
+
+//MAIOR, MEIO E MENOR//
+
+if(A==C && A>B && C>B){
+    maior=A;
+    meio=C;
+    menor=B;
+}
+else if(A==B && A>C && B>C){
+    maior=A;
+    meio=B;
+    menor=C;
+}
+else if(B==C && B>A && C>A){
+    maior=B;
+    meio=C;
+    menor=A;
+
+}
+
+else{
+    if(A > B && A > C){
+        maior=A;
+            if(B>C){
+                meio=B;
+                menor=C;
+            }else{
+                menor=B;
+                meio=C;
+                maior=A;
+        }
+    }
+
+    else if(B > A && B > C){
+        maior=B;
+            if(A>C){
+                meio=A;
+                menor=C;
+            }else{
+                menor=A;
+                meio=C;
+                maior=B;
+        }
+    }
+
+    else if(C > A && C > B){
+        maior=C;
+            if(A>B){
+                meio=A;
+                menor=B;
+            }else{
+                menor=A;
+                meio=B;
+                maior=C;
+        }
+    }
+}
+//Condições//
+if(maior >= meio + menor)
+    console.log("NAO FORMA TRIANGULO");
+
+else if(maior==meio && meio==menor && menor==maior)
+    console.log("TRIANGULO ACUTANGULO" + "\n" + "TRIANGULO EQUILATERO");
+
+else if(Math.pow(maior, 2)==Math.pow(meio, 2) +Math.pow(menor, 2)){
+    console.log("TRIANGULO RETANGULO");
+}
+else{
+    if(Math.pow(maior, 2)>Math.pow(meio, 2) + Math.pow(menor, 2)){
+        n1 = "TRIANGULO OBTUSANGULO";
+        if(maior==meio && menor!=maior && menor!=meio){
+            n2 = ("TRIANGULO ISOSCELES");
+            console.log(n1 + "\n" + n2);
+        }else if(maior==menor && meio!=maior && meio!=menor){
+            n2 = ("TRIANGULO ISOSCELES");
+            console.log(n1 + "\n" + n2);
+        }else if(meio==maior && menor!=maior && menor!=meio){
+            n2 = ("TRIANGULO ISOSCELES");
+            console.log(n1 + "\n" + n2);
+        }else if(meio==menor && maior!=menor && maior!=meio){
+            n2 = ("TRIANGULO ISOSCELES");
+            console.log(n1 + "\n" + n2);
+        }else if(menor==maior && meio!=maior && meio!=menor){
+            n2 = ("TRIANGULO ISOSCELES");
+            console.log(n1 + "\n" + n2);
+        }else if(menor==meio & maior!=menor && maior!=meio){
+            n2 = ("TRIANGULO ISOSCELES");
+            console.log(n1 + "\n" + n2);
+        }else if(maior==meio==menor){
+            n2 = ("TRIANGULO EQUILATERO");
+            console.log(n1 + "\n" + n2);
+        }else{
+            console.log(n1);
+        }
+}
+    else if(Math.pow(maior, 2)<Math.pow(meio, 2) + Math.pow(menor, 2)){
+        n1 = "TRIANGULO ACUTANGULO";
+        if(maior==meio && menor!=maior && menor!=meio){
+            n2 = ("TRIANGULO ISOSCELES");
+            console.log(n1 + "\n" + n2);
+        }else if(maior==menor && meio!=maior && meio!=menor){
+            n2 = ("TRIANGULO ISOSCELES");
+            console.log(n1 + "\n" + n2);
+        }else if(meio==maior && menor!=maior && menor!=meio){
+            n2 = ("TRIANGULO ISOSCELES");
+            console.log(n1 + "\n" + n2);
+        }else if(meio==menor && maior!=menor && maior!=meio){
+            n2 = ("TRIANGULO ISOSCELES");
+            console.log(n1 + "\n" + n2);
+        }else if(menor==maior && meio!=maior && meio!=menor){
+            n2 = ("TRIANGULO ISOSCELES");
+            console.log(n1 + "\n" + n2);
+        }else if(menor==meio & maior!=menor && maior!=meio){
+            n2 = ("TRIANGULO ISOSCELES");
+            console.log(n1 + "\n" + n2);
+        }else if(maior==meio==menor){
+            n2 = ("TRIANGULO EQUILATERO");
+            console.log(n1 + "\n" + n2);
+        }else{
+            console.log(n1);
+        }
+}
+}
