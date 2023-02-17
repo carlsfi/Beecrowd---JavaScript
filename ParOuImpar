@@ -1,0 +1,33 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt= function(frase) { return lines.shift ();};
+
+let X = parseInt(prompt("Valor de X"));
+let i = 0;
+let parimpar;
+let Y;
+
+for(i; i < X; i++){
+    
+    let Y=parseInt(prompt());
+
+    if(Y % 2 === 0 && Y !== 0){
+        parimpar = "EVEN";
+            if(Y>0){
+                console.log(parimpar + " POSITIVE");
+            }else if(Y<0){
+                console.log(parimpar + " NEGATIVE");
+            }
+    }
+    else if(Y % 2 !== 0 && Y !== 0){
+        parimpar = "ODD";
+            if(Y>0){
+                console.log(parimpar + " POSITIVE");
+            }else if(Y<0){
+                console.log(parimpar + " NEGATIVE");
+            }
+    }
+    else if(Y === 0){
+        console.log("NULL");
+    }
+}
