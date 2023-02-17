@@ -1,0 +1,14 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto){ return lines.shift();};
+
+let aux = 0; 
+for(i = 0; i < 6; i++){
+    let N = parseInt(prompt("valor de A"));
+    if(N !== 0){
+        if(N % 2 === 0){
+            aux++;
+        }
+    }
+}
+console.log(aux + " valores positivos");
