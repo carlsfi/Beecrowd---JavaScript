@@ -1,0 +1,14 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+
+var prompt=function(texto) { return lines.shift ();};
+
+
+var N = parseInt(prompt("Duração do evento (em segundos)"));
+
+var horas = parseInt(N / 3600);
+var resto = N % 3600;
+var minutos = parseInt(resto / 60);
+var segundos = parseInt(resto % 60);
+
+console.log(`${horas}:${minutos}:${segundos}`);
