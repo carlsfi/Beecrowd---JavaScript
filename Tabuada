@@ -1,0 +1,11 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto){return lines.shift();};
+
+let N = parseInt(prompt("Valor de N"));
+let i = 1;
+let T = 1;
+
+for(i; i <= 10 ;i++, T++){
+    console.log(`${T} x ${N} = ${T*N}`);
+}
