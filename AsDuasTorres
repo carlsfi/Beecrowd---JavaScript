@@ -1,0 +1,8 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto){ return lines.shift()}
+
+var [distancia, diametroSauron, diametroSaruman] = prompt("Indique a distância entre os Palantír, o diâmetro do Palantír de Sauron e o diâmetro do Palantír de Saruman.").split(" ").map(Number);
+var icm = (distancia / (diametroSauron + diametroSaruman));
+
+console.log(icm.toFixed(2));
