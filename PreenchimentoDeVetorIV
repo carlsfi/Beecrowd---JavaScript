@@ -1,0 +1,33 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto) { return lines.shift(); };
+
+var par = [];
+var A = 0;
+var impar = [];
+var B = 0;
+
+for(i = 0; i < 15; i++){
+    var x = prompt("");
+    if(x % 2 == 0){
+        par[A] = x;
+        A++;
+    }else{
+        impar[B] = x;
+		B++;
+    }if(A == 5){
+        var A = 0;
+        for(j = 0; j < 5; j++){
+            console.log("par[" + j + "] = " + par[j]);
+        }
+    }if(B == 5){
+        var B = 0;
+        for(k = 0; k < 5; k++){
+            console.log("impar[" + k + "] = " + impar[k]);
+        }
+    }
+}for(g = 0; g < B; g++){
+    console.log("impar[" + g + "] = " + impar[g]);
+}for(l = 0; l < A; l++){
+    console.log("par[" + l + "] = " + par[l]);
+}
