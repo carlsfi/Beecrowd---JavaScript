@@ -1,0 +1,12 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto){return lines.shift();};
+
+let N = parseInt(prompt("Valor de N"));
+let i = 1;
+
+for(i; i>=1 && i<=10000; i++){
+    if(i%N == 2){ 
+        console.log(i);
+    }
+}
