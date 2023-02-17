@@ -1,0 +1,29 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+
+var prompt=function(texto) { return lines.shift ();};
+
+var N=parseInt(prompt("Valor"));
+
+var A=Math.trunc(N/100);
+var restoA=N % 100;
+var B=Math.trunc(restoA/50);
+var restoB=restoA % 50;
+var C=Math.trunc(restoB/20);
+var restoC=restoB % 20;
+var D=Math.trunc(restoC/10);
+var restoD=restoC % 10;
+var E=Math.trunc(restoD/5);
+var restoE=restoD % 5;
+var F=Math.trunc(restoE/2);
+var restoF=restoE % 2;
+var G=Math.trunc(restoF/1);
+
+console.log(N);
+console.log(A + " nota(s) de R$ 100,00");
+console.log(B + " nota(s) de R$ 50,00");
+console.log(C + " nota(s) de R$ 20,00");
+console.log(D + " nota(s) de R$ 10,00");
+console.log(E + " nota(s) de R$ 5,00");
+console.log(F + " nota(s) de R$ 2,00");
+console.log(G + " nota(s) de R$ 1,00");
