@@ -1,0 +1,15 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto){ return lines.shift();};
+
+    let N = parseInt(prompt("Valor de N"));
+    let media;
+    let aux = 0;
+
+    for(i = 1; N > 0; i++){
+        aux = N + aux;
+        media = aux / i;
+        N = parseInt(prompt("Valor de N"));
+    }
+
+    console.log(media.toFixed(2));
