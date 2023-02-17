@@ -1,0 +1,16 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto){ return lines.shift();};
+
+  let auxCont = 0;
+  let auxMaior = 1;
+
+  for(i = 1; i <= 100; i++){
+    let N = parseInt(prompt("Insira os valores"));
+      if(N>auxMaior){
+        auxMaior = N;
+        auxCont = i;
+      }
+  }
+  console.log(auxMaior);
+  console.log(auxCont);
