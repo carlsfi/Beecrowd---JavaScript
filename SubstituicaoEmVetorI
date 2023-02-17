@@ -1,0 +1,13 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto){return lines.shift();};
+
+let N = 10;
+let A = [];
+
+for(i=0; i<N; i++){
+	let X = Number(prompt());
+	A[i] = X;
+	if(A[i] <= 0) A[i] = 1;
+	console.log("X[" + i + "] = " + A[i]);
+}
