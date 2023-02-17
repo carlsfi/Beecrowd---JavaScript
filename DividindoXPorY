@@ -1,0 +1,16 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto){return lines.shift();};
+
+let N = parseInt(prompt("Quantidade de operações"));
+
+for(i = 0; i<N; i++){
+    let [X, Y] = (prompt("Valores de X e Y").split(" ")).map(Number);
+    let div = X / Y;
+    if(Y === 0){
+        console.log("divisao impossivel");
+    }
+    else{
+    console.log(div.toFixed(1));
+    }
+}
