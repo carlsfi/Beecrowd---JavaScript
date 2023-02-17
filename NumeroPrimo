@@ -1,0 +1,21 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto){ return lines.shift();};
+
+    let N = parseInt(prompt("Número de repetições"));
+
+    for (i = 0; i < N; i++) {
+        let x = parseInt(prompt("Número primo para teste"));
+        let aux = x;
+        aux--;
+        while (aux > 1) {
+            if (x % aux === 0) {
+                console.log(x + " nao eh primo");
+                break;
+            }
+            aux--;
+        }
+        if (aux == 1) {
+            console.log(x + " eh primo");
+        }
+    }
