@@ -1,0 +1,31 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto) { return lines.shift(); };
+
+function SrtGold(a, b)
+{return b[1]-a[1];}
+function SrtSilver(a, b)
+{if(a[1] == b[1])
+    {return b[2]-a[2];}
+}
+function SrtBronze(a, b)
+{if(a[1] == b[1] && a[2] == b[2])
+    {return b[3]-a[3];}
+}
+
+var values = [];
+var n = Number(lines.shift());
+for(i=0 ; i<n ; i++)
+{
+    var new_v = lines.shift().split(' ');
+    [new_v[1],new_v[2],new_v[3]] = [Number(new_v[1]),Number(new_v[2]),Number(new_v[3])];
+    values.push(new_v);
+}
+
+values.sort();
+values.sort(SrtGold);
+values.sort(SrtSilver);
+values.sort(SrtBronze);
+
+for(i=0 ; i<n ; i++)
+{console.log(values[i].join(' '));}
