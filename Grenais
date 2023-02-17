@@ -1,0 +1,48 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto){ return lines.shift();};
+
+    let aux = 1;
+    let vitoriaInter = 0;
+    let vitoriaGremio = 0;
+    let empateGrenal = 0;
+
+    let [inter, gremio] = prompt("Placar do jogo, sendo o primeiro inter e depois gremio").split(" ").map(Number);
+        if(gremio > inter){
+            vitoriaGremio++;
+        } else if(inter > gremio){
+            vitoriaInter++;
+        } else if( inter == gremio){
+            empateGrenal++;
+        }
+
+for(i = 0; aux == 1; i++){
+    console.log("Novo grenal (1-sim 2-nao)");
+    let grenal = parseInt(prompt("1-sim 2-nao"));
+
+    if(grenal == 1){
+        [inter, gremio] = prompt("Placar do jogo, sendo o primeiro gremio e depois inter").split(" ").map(Number);
+        if(gremio > inter){
+            vitoriaGremio++;
+        } else if(inter > gremio){
+            vitoriaInter++;
+        } else if( inter == gremio){
+            empateGrenal++;
+        }
+    }else if(grenal == 2){
+        aux = 0;
+    }
+    }
+
+    //Saída//
+    console.log(i + " grenais");
+    console.log("Inter:" + vitoriaInter);
+    console.log("Gremio:" + vitoriaGremio);
+    console.log("Empates:" + empateGrenal);
+    if(vitoriaInter > vitoriaGremio){
+        console.log("Inter venceu mais");
+    } else if(vitoriaGremio > vitoriaInter){
+        console.log("Gremio venceu mais");
+    } else if(vitoriaGremio == vitoriaInter){
+        console.log("Nao houve vencedor");
+    }
