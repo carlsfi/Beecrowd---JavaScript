@@ -1,0 +1,21 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto){return lines.shift();};
+
+ let media = 0;
+ let notaA = parseFloat(prompt("Insira o Valor da primeira nota"));
+
+    for(i = 0; media === 0; i++){
+        if(notaA < 0 || notaA > 10){
+            console.log("nota invalida");
+            notaA = parseFloat(prompt("Insira o Valor da primeira nota"));
+        }else{
+            let notaB = parseFloat(prompt("Insira o Valor da segunda nota"));
+                    if(notaB < 0 || notaB > 10){
+                        console.log("nota invalida");
+                    }else{
+                        media = (notaA + notaB) / 2;
+                        console.log("media = " + media.toFixed(2));
+        }            
+        }
+    }
