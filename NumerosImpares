@@ -1,0 +1,14 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt= function(frase) { return lines.shift ();};
+
+var X = parseInt(prompt("Valor de X"));
+var i;
+
+if(X >= 1 && X <= 1000){
+    for(i = 1; i <= X; i++){
+        if(i % 2 == 1){
+            console.log(i);
+    }
+}
+}
