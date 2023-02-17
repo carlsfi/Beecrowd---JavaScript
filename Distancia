@@ -1,0 +1,9 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+
+var prompt=function(texto) { return lines.shift ();};
+
+var distancia = parseInt(prompt("Distancia (em Km)"));
+var tempo = distancia * 2;
+
+console.log(tempo + " minutos");
