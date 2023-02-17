@@ -1,0 +1,30 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+
+var prompt = function(texto){ return lines.shift();};
+
+let calculo = 1;
+while(calculo == 1){
+    
+    let nota1 = parseFloat(prompt("Valor da Nota 1"));
+    while(nota1 < 0 || nota1 > 10){
+        console.log("nota invalida");
+        nota1 = parseFloat(prompt("Insira um valor válido para Nota 1"));
+    }
+    
+    let nota2 = parseFloat(prompt("Valor da Nota 2"));
+    while(nota2 < 0 || nota2 > 10){
+        console.log("nota invalida");
+        nota2 = parseFloat(prompt("Insira um valor válido para Nota 2"));
+    }
+    
+    let media = (nota1 + nota2) / 2;
+    console.log("media = " + media.toFixed(2));
+    console.log("novo calculo (1-sim 2-nao)");
+    
+    calculo = parseInt(prompt("Novo cálculo, digite 1 para sim e 2 para não!"));
+    while(calculo != 1 && calculo != 2){
+        console.log("novo calculo (1-sim 2-nao)");
+        calculo = parseInt(prompt("Digite 1 para sim e 2 para não!"));
+    }
+}
