@@ -1,0 +1,38 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt= function(frase) { return lines.shift ();};
+
+var A = String(prompt("vertebrado ou invertebrado"));
+
+if(A=="vertebrado"){
+    B = prompt("ave ou mamifero?");
+        if(B=="ave"){
+        C = prompt("carnivoro ou onivoro?");
+            if(C=="carnivoro")
+                console.log("aguia");
+            else if(C=="onivoro")
+                console.log("pomba");
+        }else if(B=="mamifero"){
+        C = prompt("onivoro ou herbivoro");
+            if(C=="onivoro")
+                console.log("homem");
+            else if(C=="herbivoro")
+                console.log("vaca");
+    }
+    }
+else if(A=="invertebrado"){
+    B = prompt("inseto ou anelideo?");
+        if(B=="inseto"){
+        C = prompt("hematofago ou herbivoro?");
+            if(C=="hematofago")
+                console.log("pulga");
+            else if(C=="herbivoro")
+                console.log("lagarta");
+        }else if(B=="anelideo"){
+        C = prompt("hematofago ou onivoro?");
+            if(C=="hematofago")
+                console.log("sanguessuga");
+            else if(C=="onivoro")
+                console.log("minhoca");
+}
+}
