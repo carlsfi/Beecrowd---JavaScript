@@ -1,0 +1,16 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt=function(texto) { return lines.shift ();};
+
+//Variáveis//
+let [A, B, C] =prompt("Insira os valores de A, B e C").split(" ").map(Number);
+
+var DELTHA=B * B - 4 * A * C;
+
+//Condições//
+if(A===0 || DELTHA<0)
+   console.log("Impossivel calcular"); 
+else{
+    console.log("R1 = " + (((- B + Math.sqrt(DELTHA)) / (2 * A)).toFixed(5)));
+    console.log("R2 = " + (((- B - Math.sqrt(DELTHA)) / (2 * A)).toFixed(5)));
+}
