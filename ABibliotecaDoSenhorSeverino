@@ -1,0 +1,36 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto) { return lines.shift(); };
+////
+A = [];
+var aux;
+////
+while(true){
+    var N = parseInt(prompt(""));
+    if(isNaN(N)){
+        break
+    }for(i = 0; i < N; i++){
+        A[i] = parseInt(prompt(""));
+    }for(j = 0; j < A.length - 1; j++){
+        for(k = 0; k < (A.length - j - 1); k++){
+            if(A[k] > A[k+1]){
+                aux = A[k];
+                A[k] = A[k + 1];
+                A[k + 1] = aux;
+            }
+        }
+    }for(l = 0; l < N; l++){
+        if(A[l] > 9 && A[l] < 100){
+            console.log("00" + A[l]);
+        }else if(A[l] > 0 && A[l] < 10){
+            console.log("000" + A[l]);
+        }else if(A[l] > 99 && A[l] < 1000){
+            console.log("0" + A[l]);
+        }else if(A[l] === 0){
+            console.log("0000");
+        }else{
+            console.log(A[l]);
+        }
+    }
+    A = [];
+}
