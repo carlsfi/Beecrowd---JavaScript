@@ -1,0 +1,13 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+
+var prompt=function(texto) { return lines.shift ();};
+
+var number = parseInt(prompt("Número do Funcionário"));
+var horas = parseInt(prompt("Horas trabalhadas"));
+var valor = parseFloat(prompt("Valor por hora trabalhada"));
+
+var salario = horas * valor;
+
+console.log("NUMBER = " + number);
+console.log("SALARY = U$ " + salario.toFixed(2));
