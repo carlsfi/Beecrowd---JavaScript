@@ -1,0 +1,11 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+
+var prompt=function(texto) { return lines.shift ();};
+
+var π = parseFloat(3.14159);
+var r = parseFloat(prompt("Valor do Raio"));
+
+var area = π * (r * r);
+
+console.log("A=" + area.toFixed(4));
