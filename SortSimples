@@ -1,0 +1,54 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt= function(frase) { return lines.shift ();};
+
+var maior;
+var menor;
+var meio;
+
+//Variáveis//
+var [A, B, C]= prompt("Valores Inteiros").split(" ").map(Number);
+
+if(A > B && A > C){
+    maior=A;
+        if(B>C){
+            meio=B;
+            menor=C;
+        }else{
+            menor=B;
+            meio=C;
+            maior=A;
+        }
+}
+
+if(B > A && B > C){
+    maior=B;
+        if(A>C){
+            meio=A;
+            menor=C;
+        }else{
+            menor=A;
+            meio=C;
+            maior=B;
+        }
+}
+
+if(C>A && C>B){
+    maior=C;
+        if(A>B){
+            meio=A;
+            menor=B;
+        }else{
+            menor=A;
+            meio=B;
+            maior=C;
+        }
+}
+
+console.log(menor);
+console.log(meio);
+console.log(maior);
+console.log("");
+console.log(A);
+console.log(B);
+console.log(C);
