@@ -1,0 +1,13 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto){ return lines.shift();};
+
+let N = parseInt(prompt("Número de Linhas"));
+let A = 1;
+let B = 2;
+let C = 3;
+let PUM = 4;
+
+for(i = 0; i<N; i++, A=PUM + 1, A=PUM + 1, B=A + 1, C=B + 1, PUM= C + 1){
+    console.log(`${A} ${B} ${C} PUM`);
+}
