@@ -1,0 +1,12 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+
+
+var X = parseInt(lines.shift("Valor de X"));
+var i = X + 12;
+
+for(X; X < i; X++){
+    if(X % 2 > 0){
+        console.log(X);
+    }
+}
