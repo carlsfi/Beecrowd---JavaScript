@@ -1,0 +1,33 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto){ return lines.shift()}
+
+var [N, G] = prompt("Quantidade de runas existentes e quantidade de amizade necessária para derrotar Gollum.").split(" ").map(Number);
+var valorAmizade = [];
+var runaCadastrada = [];
+
+for(i = 0; i < N; i++) {
+    var [runa, valor] = prompt("Indique a runa e o valor de amizade.").split(" ");
+    valor = parseInt(valor);
+
+    runaCadastrada[i] = runa;
+    valorAmizade[i] = valor;
+}
+
+var X = parseInt(prompt(".."));
+var leituraRunas = prompt("runas").split(" ");
+
+var soma = 0;
+for(i = 0; i < X; i++) {
+    for(j = 0; j < N; j++) {
+        if(leituraRunas[i] == runaCadastrada[j]) {
+            soma = soma + valorAmizade[j];
+        }
+    }
+}
+
+console.log(soma);
+
+if(soma >= G) console.log(`You shall pass!`);
+
+else console.log(`My precioooous`);
