@@ -1,0 +1,32 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto){ return lines.shift();};
+
+    let N = parseInt(prompt("Número de Testes"));
+    let auxCobaias = 0;
+    let ratos = 0;
+    let sapos = 0;
+    let coelhos = 0;
+
+    for (i = 0; i < N; i++) {
+        let [quantia, tipo] = prompt("Quantidade de cobaias e tipo (R:Rato; S:Sapo; C:Coelho)").split(" ");
+        quantia = parseInt(quantia);
+        auxCobaias = quantia + auxCobaias;
+        if (tipo == "R") {
+            ratos = ratos + quantia;
+        } else if (tipo == "S") {
+            sapos = sapos + quantia;
+        } else if (tipo == "C") {
+            coelhos = coelhos + quantia;
+        }
+    }
+    let auxPorcentagemR = (ratos * 100) / auxCobaias;
+    let auxPorcentagemS = (sapos * 100) / auxCobaias;
+    let auxPorcentagemC = (coelhos * 100) / auxCobaias;
+    console.log("Total: " + auxCobaias + " cobaias");
+    console.log("Total de coelhos: " + coelhos);
+    console.log("Total de ratos: " + ratos);
+    console.log("Total de sapos: " + sapos);
+    console.log("Percentual de coelhos: " + auxPorcentagemC.toFixed(2) + " %");
+    console.log("Percentual de ratos: " + auxPorcentagemR.toFixed(2) + " %");
+    console.log("Percentual de sapos: " + auxPorcentagemS.toFixed(2) + " %");
