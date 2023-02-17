@@ -1,0 +1,27 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto){ return lines.shift();};
+
+var X = parseInt(prompt("Escreva os valores de X"));
+var Y = parseInt(prompt("Escreva os valores de Y"));
+if(X>Y && X>0 && Y>0){
+    X--;
+    Y++;
+    while(Y < X){
+        if(Y % 5 == 2 || Y % 5 == 3){
+            console.log(Y);
+        }
+        Y++;
+    }
+}
+
+else if(Y>X && X>0 && Y>0){
+    Y--;
+    X++;
+    while(X < Y){
+        if(X % 5 == 2 || X % 5 == 3){
+            console.log(X);
+        }
+        X++;
+    }
+}
