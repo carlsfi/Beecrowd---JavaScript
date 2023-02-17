@@ -1,0 +1,6 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto){return lines.shift();};
+
+let [metros, comp] = prompt("Digite os metros que deseja correr e o comprimento da pista, respectivamente.").split(" ").map(Number);
+let pontoF = metros % comp;
