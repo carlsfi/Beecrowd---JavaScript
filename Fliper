@@ -1,0 +1,19 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto){return lines.shift();};
+
+var [P, R] = prompt("Indique os valores das portas P e R").split(" ");
+
+P = parseInt(P);
+R = parseInt(R);
+
+if(P == 1 && R == 1){
+    console.log("A");
+}
+else if(P == 1 && R === 0){
+    console.log("B");
+}
+
+else if(P === 0){
+    console.log("C");
+}
