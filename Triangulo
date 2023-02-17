@@ -1,0 +1,14 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt=function(texto) { return lines.shift ();};
+
+var [A, B, C]=prompt("Valores").split(" ").map(Number);
+
+//condições//
+if((A+B)>C && (C+A)>B && (B+C)>A){
+    let perimetro=(A+B+C);
+    console.log("Perimetro = " + perimetro.toFixed(1));
+}else{
+    let area=((A + B) * C)/2;
+    console.log("Area = " + area.toFixed(1));
+}
