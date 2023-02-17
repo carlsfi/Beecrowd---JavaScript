@@ -1,0 +1,12 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto){return lines.shift();};
+
+let N = parseInt(prompt("Número de casos de teste"));
+let i = 1;
+
+for(i; i<=N; i++){
+   let [A, B, C] = ((prompt("Liste os 3 casos.")).split(" ")).map(Number);
+    mediaP= ((A * 2) + (B * 3) + (C * 5)) / 10;
+    console.log(mediaP.toFixed(1));
+}
