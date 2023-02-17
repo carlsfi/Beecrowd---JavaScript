@@ -1,0 +1,52 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto) { return lines.shift(); };
+
+var n = parseInt(prompt(""));
+
+var saque = [];
+var bloqueio = [];
+var ataque = [];
+var saqueS =[];
+var bloqueioS = [];
+var ataqueS = [];
+
+for(i = 0; i < n; i++){
+    var nome = prompt("");
+    var tentativa = prompt("Valores").split(" ").map(Number);
+    var sucesso = prompt("Valores").split(" ").map(Number);
+	saque[i] = tentativa[0];
+	bloqueio[i] = tentativa[1];
+	ataque[i] = tentativa[2];
+	saqueS[i] = sucesso[0];
+	bloqueioS[i] = sucesso[1];
+	ataqueS[i] = sucesso[2];
+}
+
+var saquet = 0;
+var bloqueiot = 0;
+var ataquet = 0;
+
+for(j = 0; j < n; j++){
+    saquet = saquet + parseInt(saque[j]);
+    bloqueiot = bloqueiot + parseInt(bloqueio[j]);
+    ataquet = ataquet + parseInt(ataque[j]);
+}
+
+var saqueSt = 0;
+var bloqueioSt = 0;
+var ataqueSt = 0;
+
+for(k = 0; k < n; k++){
+    saqueSt = saqueSt + parseInt(saqueS[k]);
+    bloqueioSt = bloqueioSt + parseInt(bloqueioS[k]);
+    ataqueSt = ataqueSt + parseInt(ataqueS[k]);
+}
+
+var saquep = saqueSt*100/saquet;
+var bloqueiop = bloqueioSt*100/bloqueiot;
+var ataquep = ataqueSt*100/ataquet;
+
+console.log("Pontos de Saque: " + saquep.toFixed(2) + " %.");
+console.log("Pontos de Bloqueio: " + bloqueiop.toFixed(2) + " %.");
+console.log("Pontos de Ataque: " + ataquep.toFixed(2) + " %.");
