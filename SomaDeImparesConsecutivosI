@@ -1,0 +1,28 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto){return lines.shift();};
+
+    let X = parseInt(prompt("Valor de X"));
+    let Y = parseInt(prompt("Valor de Y"));
+    let impar = 0;
+    let maior;
+    let menor;
+
+    if (X == Y) {
+        console.log(0);
+    } else {
+        if (X > Y) {
+            maior = X;
+            menor = Y;
+        } else if (Y > X) {
+            maior = Y;
+            menor = X;
+        }
+
+        for (menor = menor + 1; menor < maior; menor++) {
+            if (menor % 2 !== 0) {
+                impar = impar + menor;
+            }
+        }
+        console.log(impar);
+    }
