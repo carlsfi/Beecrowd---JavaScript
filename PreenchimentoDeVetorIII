@@ -1,0 +1,17 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto) { return lines.shift(); };
+
+
+////
+var x = parseInt(prompt(""));
+var A = [];
+////
+for(i = 0; i < 1000;){
+    for(k = 0; k < x && i < 1000;k++){
+        A.push(k);
+        console.log("N[" + i + "] = " + A[i]);
+        i++;
+    }
+    k = 0;
+}
