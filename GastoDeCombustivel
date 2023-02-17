@@ -1,0 +1,12 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+
+var prompt=function(texto) { return lines.shift ();};
+
+var tempo=parseInt(prompt("Tempo gasto na viagem (em horas)"));
+var velocidade=parseInt(prompt("Velocidade média (em km/h)"));
+
+var distancia=tempo * velocidade;
+var litros=distancia / 12;
+
+console.log(litros.toFixed(3));
